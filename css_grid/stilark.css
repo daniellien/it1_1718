@@ -1,0 +1,137 @@
+
+body{
+    margin: 0;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+.nettsider ul li{
+    list-style-type: none;
+}
+
+
+.nettsider li a{
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 5px;
+}
+
+.nettsider li a:hover{
+    color: red;
+    font-size: 20px;
+}
+
+.nav li:hover{
+    background-color: #4aaaa5;
+}
+.nav ul {
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li{
+    margin: 0;
+    flex: 1 1;
+}
+
+.nav a{
+    color: whitesmoke;
+    width: 100%;
+    display: block;
+    padding: 1.15em 3%;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+div.grid{
+    grid-gap: 1px;
+    display: grid;
+    grid-template-areas:
+            "header"
+            "nav"
+            "aside1"
+            "main"
+            "aside2"
+            "footer";
+}
+
+div.header{
+    grid-area: header;
+    background-color: #3dccc7;
+}
+
+div.nav{
+    grid-area: nav;
+    background-color: #8CADA7;
+    padding: 2px;
+}
+
+div.main{
+    grid-area: main;
+    background-color: #07BEB8;
+}
+
+div.aside1{
+    grid-area: aside1;
+    background-color: #C4FFF9;
+}
+
+div.aside2{
+    grid-area: aside2;
+    background-color: #9CEAEF;
+}
+
+div.footer{
+    grid-area: footer;
+    background-color: #68D8D6;
+}
+
+@media (min-width: 500px) {
+    div.grid{
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+                "header header header"
+                "nav nav nav"
+                "aside1 main aside2"
+                "footer footer footer";
+    }
+
+    div.aside2{
+        background-color: #C4FFF9;
+    }
+
+    div.nav ul{
+        flex-direction: row;
+    }
+
+}
+
+@media (min-width: 700px) {
+    div.grid{
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+                "header header"
+                "nav nav"
+                "aside1 main"
+                "aside2 main"
+                "footer footer";
+    }
+    div.aside2{
+        background-color: #C4FFF9;
+    }
+
+}
+
+h2{
+    color: #8CADA7;
+    font-size: 20px;
+}

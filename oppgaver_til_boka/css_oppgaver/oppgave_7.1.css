@@ -1,0 +1,94 @@
+body{
+    background-color: slategray;
+}
+
+h1{
+    color: whitesmoke;
+    border: solid;
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    font-family: Copperplate;
+}
+
+h3{
+    color: whitesmoke;
+}
+
+
+.avsnitt_1{
+    background-color: red;
+    width: 500px;
+    height: 100px;
+    margin: auto;
+    padding: 20px;
+    border: solid;
+    border-color: ghostwhite;
+}
+
+.avsnitt_2{
+    background-color: red;
+    width: 500px;
+    height: 100px;
+    margin: auto;
+    padding: 20px;
+    border: solid;
+    border-color: ghostwhite;
+}
+
+ol li{
+    background-color: darkmagenta;
+    padding: 1px;
+    margin: 5px;
+    width: 60px;
+    border-radius: 7px;
+    border: solid;
+    border-color: whitesmoke;
+}
+
+ul li{
+    background-color: aquamarine;
+    margin: 5px;
+    text-align: center;
+    width: 100px;
+    border-radius: 7px;
+    list-style-type: none;
+    border: solid;
+    border-color: ghostwhite;
+}
+
+.nystil li{
+    background-color: lavender;
+    color: blue;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th{
+    background-color: darkolivegreen;
+    border:1px solid black;
+    padding: 5px;
+}
+
+tr{
+    background-color: darkseagreen;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+a{
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+
+
+

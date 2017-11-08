@@ -1,0 +1,103 @@
+h1{
+    color: whitesmoke;
+    text-align: center;
+    font-family: Athelas;
+    font-size: 70px;
+    text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #b9b9b9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+    margin-bottom: 0;
+}
+
+body{
+    background-color: red;
+}
+
+div{
+    max-width: 1000px;
+    min-width: 1000px;
+    padding: 50px;
+    background-color: whitesmoke;
+    min-height: 300px;
+    margin: 80px auto;
+    position: relative;
+
+}
+ul{
+    list-style-type: none;
+
+}
+
+ul a{
+    text-decoration: none;
+    background-color: whitesmoke;
+    color: #35404f;
+    padding: 8px;
+    margin: 2px;
+    font-weight: bold;
+    font-family: Avenir;
+}
+
+ul li{
+    display: inline;
+}
+
+ul a:hover{
+    background-color: darkred;
+    color: whitesmoke;
+
+}
+
+h3{
+    font-family: "American Typewriter";
+    font-size: 20px;
+}
+
+a{
+    color: red;
+}
+
+img.ram{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.hdd{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.hovedkort{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.prosessor{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+video{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -150px;
+    display: block;
+    transform:rotate(90deg);
+    z-index:4;
+    visibility : visible;
+}
+
+

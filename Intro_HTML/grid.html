@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid</title>
+
+    <style>
+
+        body{
+            margin:0;
+            text-align: center;
+        }
+
+        div.grid{
+            display: grid;
+            grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside1"
+            "aside2"
+            "footer"
+        }
+
+        div.header{
+            background-color: #4aaaa5;
+            grid-area: header;
+        }
+
+        div.nav{
+            background-color: #35404f;
+            grid-area: nav;
+        }
+
+        div.main{
+            background-color: #37422e;
+            grid-area: main;
+        }
+
+        div.aside1{
+            background-color: #a3d39c;
+            grid-area: aside1;
+        }
+
+        div.aside2{
+            background-color: #eb7260;
+            grid-area: aside2;
+        }
+
+        div.footer{
+            background-color: blueviolet;
+            grid-area: footer;
+        }
+
+        @media (min-width: 500px) {
+
+            div.grid{
+                grid-template-columns: 1fr 3fr;
+                grid-template-areas:
+                "header    header"
+                "nav       nav"
+                "aside1    main"
+                "aside2   footer"
+            ;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="grid">
+
+    <div class="header">
+        <h1>Grid-side</h1>
+    </div>
+
+    <div class="nav">
+        Meny
+    </div>
+
+    <div class="main">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae commodi dicta eius, excepturi laborum
+            magnam nam neque obcaecati odio officiis quas quasi qui ratione sequi ut veritatis! Accusamus, at!</p>
+        <p>Atque deserunt eum id illum, laudantium minus obcaecati rerum temporibus ut veniam. Blanditiis facere in
+            reiciendis! Quam saepe, voluptatem! A aliquam deleniti enim eos eum eveniet minima sapiente velit
+            voluptas.</p>
+    </div>
+
+    <div class="aside1">
+    <p>hallo no</p>
+    </div>
+
+    <div class="aside2">
+    <p>heia</p>
+    </div>
+
+    <div class="footer">
+        <p>Hallo din ku</p>
+    </div>
+
+
+</div>
+
+</body>
+</html>

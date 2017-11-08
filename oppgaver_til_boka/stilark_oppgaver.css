@@ -1,0 +1,77 @@
+body{
+    background-color: #28abe3;
+    font-family: sans-serif;
+}
+
+.oppgave{
+    width: 1000px;
+    padding: 10px;
+    background-color: #f7eac8;
+    min-height: 300px;
+    margin: 80px auto;
+    position: relative;
+}
+
+h1{
+    color: #db3340;
+    font-size: 100px;
+    text-align: center;
+}
+
+h2{
+    color: #37422e;
+    margin-top: -80px;
+    text-align: center;
+}
+
+h3{
+    color: black;
+    font-family: "American Typewriter";
+}
+
+img{
+    display: block;
+    margin: auto;
+}
+
+.paragraf{
+    color: #b89115;
+}
+
+ul{
+    color: #b89115;
+}
+
+ol{
+    color: #db3340;
+}
+
+input{
+    color: #b89115;
+    display: table;
+    width: 180px;
+    padding: 2px;
+    border: solid;
+    border-color: #b89115;
+    border-radius: 7px;
+    margin-bottom: 1px;
+    background-color: whitesmoke;
+    font-family: "Arial";
+    font-weight: bold;
+}
+
+.oppgave5{
+    color: #db3340;
+}
+
+h4{
+    color: #db3340;
+}
+
+.liste{
+    color: #b89115;
+}
+
+
+
+

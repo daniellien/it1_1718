@@ -1,0 +1,43 @@
+body{
+    background-color: slategray;
+}
+
+h1{
+    color: darkred;
+    font-family: "Apple SD Gothic Neo";
+    border: solid 3px darkred;
+    border-width: 3px;
+    width: 250px;
+    margin: auto;
+    text-align: center;
+}
+
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li a{
+    background-color: #35404f;
+    display: block;
+    margin: 2px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #7accc8;
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+    border-radius: 10px;
+
+}
+
+.pakker{
+    width: 400px;
+    margin: auto;
+}
+
+ul a:hover{
+    background-color: whitesmoke;
+}
