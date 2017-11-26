@@ -3,30 +3,14 @@ body{
     margin: 0;
 }
 
-.overskrift h1 a{
-    text-decoration: dashed;
-    color: whitesmoke;
-}
-
-.nettsider ul li{
-    list-style-type: none;
-}
-
-
-.nettsider li a{
-    text-decoration: none;
-    color: whitesmoke;
-    padding: 5px;
-}
-
-.nettsider li a:hover{
-    color: red;
-    font-size: 20px;
+h1{
+    color: #EEF0F2;
 }
 
 .nav li:hover{
-    background-color: #4aaaa5;
+    background-color: #aaaaaa;
 }
+
 .nav ul {
     flex-wrap: wrap;
     flex-flow: row wrap;
@@ -59,46 +43,59 @@ div.grid{
             "header"
             "nav"
             "aside1"
-            "main"
-            "aside2"
+            "main2"
             "footer";
 }
 
 div.header{
     grid-area: header;
-    background-color: #3dccc7;
+    background-color: #093A3E;
+    max-height: 100px;
 }
 
 div.nav{
     grid-area: nav;
-    background-color: #8CADA7;
+    background-color: #001011;
 }
 
 div.main{
     grid-area: main;
-    background-color: #07BEB8;
+    background-color: #DADDD8;
+    padding: 5px;
+    padding-left: 15px;
+    display: none;
+}
+
+div.main2{
+    grid-area: main2;
+    background-color: #DADDD8;
+    padding: 5px;
+    padding-left: 15px;
 }
 
 div.aside1{
     grid-area: aside1;
-    background-color: #C4FFF9;
+    background-color: #EEF0F2;
 }
 
 div.aside2{
     grid-area: aside2;
-    background-color: #9CEAEF;
+    background-color: #EEF0F2;
+    display: none;
 }
 
 div.aside3{
     grid-area: aside3;
-    background-color: #C4FFF9;
+    background-color: #EEF0F2;
     display: none;
 }
 
 div.footer{
     grid-area: footer;
-    background-color: #68D8D6;
+    background-color: #093A3E;
+    color: #EEF0F2;
 }
+
 
 @media (min-width: 500px) {
     div.grid{
@@ -106,21 +103,24 @@ div.footer{
         grid-template-areas:
                 "header header header"
                 "nav nav nav"
-                "aside1 main aside2"
+                "aside1 aside1 aside1"
+                "main2 main2 main2"
+                "aside2 aside2 aside2"
                 "footer footer footer";
     }
 
-    div.aside2{
-        background-color: #C4FFF9;
-    }
 
     div.nav ul{
         flex-direction: row;
     }
 
+    div.aside2{
+        display: block;
+    }
+
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
     div.grid{
         grid-template-columns: 1fr 2fr;
         grid-template-areas:
@@ -128,12 +128,12 @@ div.footer{
                 "nav nav"
                 "aside3 main"
                 "aside3 main"
-                "footer footer";
+                "footer footer"
     }
+
 
     div.aside2{
         display: none;
-
     }
 
     div.aside1{
@@ -142,11 +142,58 @@ div.footer{
 
     div.aside3{
         display: block;
+        padding-left: 8px;
+    }
+
+    div.main2{
+        display: none;
+    }
+
+    div.main{
+        display: block;
     }
 }
 
 h2{
-    color: #8CADA7;
+    color: #001011;
     font-size: 20px;
+    font-family: "Avenir Next Condensed";
+}
+
+#aside{
+    color: #001011;
+    font-size: 16px;
+}
+
+ol li{
+    font-weight: bold;
+}
+
+a:hover{
+    color: black;
+}
+
+#link:hover{
+    color: #4aaaa5;
+}
+
+
+img{
+    width: 450px;
+}
+
+img.bilde2{
+    width: 680px;
+    
+}
+
+p{
+    font-family: "Avenir Next Condensed";
+    font-weight: 500;
+}
+
+ul li{
+    font-family: "Avenir Next Condensed";
+    font-weight: 500;
 }
 
