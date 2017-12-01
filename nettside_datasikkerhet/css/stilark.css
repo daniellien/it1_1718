@@ -94,10 +94,12 @@ div.footer{
     grid-area: footer;
     background-color: #093A3E;
     color: #EEF0F2;
+    padding-left: 3px;
+
 }
 
 
-@media (min-width: 500px) {
+@media (min-width: 300px) {
     div.grid{
         grid-template-columns: 1fr 3fr 1fr;
         grid-template-areas:
@@ -184,7 +186,6 @@ img{
 
 img.bilde2{
     width: 680px;
-    
 }
 
 p{
