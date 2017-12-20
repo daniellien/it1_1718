@@ -31,7 +31,7 @@ startE.addEventListener('click', function () {
             navn: navnE.value,
             poeng: antKlikk
         });
-        alert("DRA D TIL HELVETTE");
+        alert("Det var lite imponerende! Kun det beste er godt nok!");
     }, 5000);
 });
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fartskontroll</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+
+<h1>Fartskontroll Sylteosen</h1>
+
+<input type="text" class="driver" placeholder="Sjåfør">
+<input type="text" class="regnr" placeholder="Reg.nr">
+<input type="number" class="speed" placeholder="Hastighet">
+<button class="send">Registrer</button>
+
+
+<div class="liste">
+
+<table border="1px">
+    <thead>
+<tr>
+    <th>Navn</th>
+    <th>Reg.nr.</th>
+    <th>Hastighet</th>
+</tr>
+    </thead>
+
+    <tbody class="register">
+
+
+    </tbody>
+</table>
+
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -20,8 +20,7 @@ body{
 }
 
 .nettsider li a:hover{
-    color: red;
-    font-size: 20px;
+    color: black;
 }
 
 .nav li:hover{
@@ -80,16 +79,19 @@ div.main{
 }
 
 div.aside1{
+    padding-left: 5px;
     grid-area: aside1;
     background-color: #C4FFF9;
 }
 
 div.aside2{
+    padding-left: 5px;
     grid-area: aside2;
     background-color: #9CEAEF;
 }
 
 div.aside3{
+    padding-left: 5px;
     grid-area: aside3;
     background-color: #C4FFF9;
     display: none;

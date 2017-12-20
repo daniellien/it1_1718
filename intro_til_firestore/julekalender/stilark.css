@@ -1,0 +1,32 @@
+body{
+    background-color: red;
+    text-align: center;
+    font-family: "American Typewriter";
+    font-size: 60px;
+
+
+}
+
+h1{
+    color: whitesmoke;
+}
+
+div.pakker{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    max-width: 1024px;
+    margin: auto;
+    background-color: whitesmoke;
+    color: black;
+}
+
+div.luke{
+    display: grid;
+    width: 200px;
+    height: 200px;
+    font-size: 140px;
+    color: whitesmoke;
+    background-color: #35404f;
+    margin: auto;
+}

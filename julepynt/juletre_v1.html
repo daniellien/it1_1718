@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Juletre versjon 1</title>
+    <style>
+
+        body{
+            background-color: red;
+        }
+
+        .pakker{
+            padding-top: 25px;
+            width: 500px;
+            margin: auto;
+            background-color: red;
+            text-align: center;
+        }
+
+        .gold{
+            color: gold;
+        }
+
+        .green{
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="pakker">
+
+</div>
+
+<script>
+    var pakkerE = document.querySelector('.pakker');
+
+    for(var y = 0; y<36; y=y+1){
+
+        for(var x = 0; x<y+1; x=x+1){
+            if(y%4===0){
+                pakkerE.innerHTML += '<span class="gold"> + </span>';
+            }
+            else {
+                pakkerE.innerHTML += '<span class="green"> + </span>';
+            }
+        }
+
+        pakkerE.innerHTML += '<br>';
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+body{
+    background-color: #4aaaa5;
+}
+
+h1{
+    color: whitesmoke;
+}
+
+table{
+    border: 1px;
+    color: black;
+    background-color: whitesmoke;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td{
+    padding: 10px;
+}
+
+.liste{
+    padding-top: 40px;
+}
