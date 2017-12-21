@@ -20,11 +20,11 @@ body{
 }
 
 .nettsider li a:hover{
-    color: black;
+    color: #0B0C10;
 }
 
 .nav li:hover{
-    background-color: #4aaaa5;
+    background-color: black;
 }
 .nav ul {
     flex-wrap: wrap;
@@ -66,18 +66,18 @@ div.grid{
 div.header{
     padding-left: 5px;
     grid-area: header;
-    background-color: #3dccc7;
+    background-color: #0B0C10;
 }
 
 div.nav{
     grid-area: nav;
-    background-color: #8CADA7;
+    background-color: #1F2833;
 }
 
 div.main{
     padding-left: 5px;
     grid-area: main;
-    background-color: #07BEB8;
+    background-color: #C5C6C7;
 }
 
 div.aside1{
@@ -95,14 +95,16 @@ div.aside2{
 div.aside3{
     padding-left: 5px;
     grid-area: aside3;
-    background-color: #C4FFF9;
+    background-color: darkgrey;
     display: none;
+    color: whitesmoke;
 }
 
 div.footer{
     padding-left: 5px;
     grid-area: footer;
-    background-color: #68D8D6;
+    color: whitesmoke;
+    background-color: #1F2833;
 }
 
 @media (min-width: 500px) {
@@ -151,12 +153,11 @@ div.footer{
 }
 
 h2{
-    color: #8CADA7;
+    color: whitesmoke;
     font-size: 20px;
 }
 
 img:hover{
     width: 1000px;
     height: 1000px;
-
 }
