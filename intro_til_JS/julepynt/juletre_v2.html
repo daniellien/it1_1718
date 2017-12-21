@@ -6,7 +6,7 @@
 
     <style>
 
-    .myCanvas{
+    #canvas{
         width: 800px;
         height: 800px;
         background-color: #4aaaa5;
@@ -18,20 +18,19 @@
 </head>
 <body>
 
-<div class="myCanvas">
-
-</div>
-
+<canvas id="canvas" width="500" height="500"></canvas>
 
 <script>
     var c = document.querySelector('.myCanvas');
-    var ctx = c.getContext("2d");
+    var ctx = canvas.getContext('2d');
 
-    ctx.moveTo(400, 0);
-    ctx.lineTo(100, 500);
+    ctx.beginPath();
+    ctx.moveTo(0,500);
+    ctx.lineTo(10, 6000000);
     ctx.stroke();
 
 
 </script>
+
 </body>
 </html>

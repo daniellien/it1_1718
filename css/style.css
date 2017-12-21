@@ -20,13 +20,11 @@ a:link{
     text-decoration: none;
     font-family: "American Typewriter";
     color: ghostwhite;
-    font-size: 40px;
+    font-size: 60px;
     margin: 0 auto;
     text-align: center;
     display: block;
 }
-
-
 
 a:visited {
     color: whitesmoke;
@@ -41,12 +39,9 @@ a:active {
 }
 
 a:hover{
-    font-size: 50px;
+    font-size: 65px;
 }
 
-
-
-
-
-
-
+.velkommen{
+    padding-top: 150px;
+}
