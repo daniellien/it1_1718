@@ -1,6 +1,6 @@
 
 body{
-    background-color: #4aaaa5;
+    background-color: #4D7298;
     color: whitesmoke;
     margin: 0;
     padding: 5px;
@@ -10,11 +10,11 @@ body{
 .skjemapakker{
     max-width: 1024px;
     margin: auto;
-    box-shadow: #3dccc7 10px 10px 10px;
+    padding-top: 40px;
 }
 
 .skjemainfo{
-    background-color: seagreen;
+    background-color: #3C4F76;
     text-align: center;
     padding: 7px;
 }
@@ -25,7 +25,7 @@ body{
 }
 
 .skjemaform{
-    background-color: #aaaaaa;
+    background-color: #727E87;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -46,13 +46,28 @@ body{
 }
 
 .skjemaform button{
-    background-color: #8CADA7;
+    background-color: #3C4F76;
+    color: whitesmoke;
     border: 0;
     height: 100px;
     padding: 10px;
 }
 
 .skjemaform button:hover{
-    background-color: #3dccc7;
+    background-color: whitesmoke;
+    color: black;
     cursor: pointer;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: #35404f;
+}
+
+th, td{
+    padding: 10px;
+}
+
+.liste{
+    padding-left: 216px;
 }

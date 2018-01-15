@@ -22,9 +22,10 @@ for(var lukenummer = 1; lukenummer<=24; lukenummer++){
 
 var pakkerE = document.querySelector('.pakker');
 
-var ref = db.collection('julekalender').orderBy('luke');
+var ref = db.collection('julekalender');
+var query = ref.where('luke', '==', 12);
 
-ref.onSnapshot(function (data) {
+query.onSnapshot(function (data) {
 
     var objekt = data.docs;
     for (var x in objekt){

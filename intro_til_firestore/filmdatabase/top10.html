@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topp 10 beste filmer</title>
+    <link rel="stylesheet" href="../../intro_til_css/skjema/stil.css">
+</head>
+<body>
+
+<div class="skjemapakker">
+
+<div class="skjemainfo">
+    <h1>Topp 10 beste</h1>
+    <h3>Her er en topp 10 liste over de beste filmene i Daniels filmdatabase</h3>
+</div>
+
+<div class="skjemaform">
+
+    <div class="liste">
+
+        <table border="1px">
+
+            <thead>
+            <tr>
+            <th>Navn</th>
+            <th>År</th>
+            <th>Rangering</th>
+            </tr>
+            </thead>
+
+            <tbody class="register">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyDU1MCq-OVxf8RbZNGpE9RGym2aswm9oO4",
+        authDomain: "firestore-b0aaf.firebaseapp.com",
+        projectId: "firestore-b0aaf"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+
+    var registerE = document.querySelector('.register');
+    var mappe = db.collection('filmdatabase').orderBy('rating', 'desc').limit(10);
+
+    mappe.onSnapshot(function(data){
+        registerE.innerHTML = "";
+        var dokument = data.docs;
+        for(var x in dokument){
+            registerE.innerHTML +=
+                "<tr>" + "<td>" + dokument[x].data().title
+                + "</td>" + "<td>" + dokument[x].data().year
+                + "</td>" + "<td>" + dokument[x].data().rating + "</td>" + "</tr>";
+        }
+    });
+
+</script>
+</body>
+</html>

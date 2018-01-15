@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrer din film!</title>
+    <link rel="stylesheet" href="../../intro_til_css/skjema/stil.css">
+</head>
+<body>
+
+<div class="skjemapakker">
+
+    <div class="skjemainfo">
+        <h2>Legg til en film i databasen!</h2>
+    </div>
+
+
+    <div class="skjemaform">
+        <p>
+            <label>Tittel</label>
+            <input type="text" id="inputTitle">
+        </p>
+        <p>
+            <label>Sjanger</label>
+            <select name="" id="inputGenre">
+                <option value="Action">Action</option>
+                <option value="Animasjon">Animasjon</option>
+                <option value="Drama">Drama</option>
+                <option value="Eventyr">Eventyr</option>
+                <option value="Grøsser">Grøsser</option>
+                <option value="Historie">Historie</option>
+                <option value="Komedie">Komedie</option>
+                <option value="Romantikk">Romantikk</option>
+                <option value="Science Fiction">Sci-Fi</option>
+                <option value="Thriller">Thriller</option>
+            </select>
+        </p>
+        <p>
+            <label for="">Årstall</label>
+            <input type="text" id="inputYear">
+        </p>
+        <p>
+            <label for="">Vurdering: <span id="outputRating"></span></label>
+            <input type="range" min="0" max="10" value="5" step="0.1" id="inputRating">
+        </p>
+        <p class="full_bredde">
+            <label for="">Kommentar</label>
+            <textarea name="" id="kommentar" cols="30" rows="3"></textarea>
+        </p>
+        <p class="full_bredde">
+            <button id="buttonAdd">Legg til film</button>
+        </p>
+
+    </div>
+
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyDU1MCq-OVxf8RbZNGpE9RGym2aswm9oO4",
+        authDomain: "firestore-b0aaf.firebaseapp.com",
+        projectId: "firestore-b0aaf"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    var inputTitle   = document.querySelector('#inputTitle');
+    var inputGenre   = document.querySelector('#inputGenre');
+    var inputYear    = document.querySelector('#inputYear');
+    var inputRating  = document.querySelector('#inputRating');
+    var outputRating = document.querySelector('#outputRating');
+    var buttonAdd    = document.querySelector('#buttonAdd');
+    var inputComment = document.querySelector('#kommentar');
+    var skjemaInfo   = document.querySelector('.skjemainfo');
+
+    outputRating.innerHTML = inputRating.value;
+
+    inputRating.oninput = function () {
+        outputRating.innerHTML = inputRating.value;
+    };
+
+    buttonAdd.addEventListener('click', function () {
+        db.collection("filmdatabase").add({
+            title: inputTitle.value,
+            genre: inputGenre.value,
+            year: inputYear.value,
+            rating: inputRating.value,
+            comment: inputComment.value
+        })
+
+        .then(function() {
+            skjemaInfo.innerHTML = '<h3>Filmen " ' + inputTitle.value + ' " ble lagt til i databasen </h3>';
+
+            inputTitle.value    =   "";
+            inputGenre.value    =   "";
+            inputYear.value     =   "";
+            inputRating.value   =   "";
+            outputRating.innerHTML = 5;
+            inputComment.value =  "";
+        })
+
+            });
+
+</script>
+
+</body>
+</html>
