@@ -93,7 +93,7 @@
         })
 
         .then(function() {
-            skjemaInfo.innerHTML = '<h3>Filmen " ' + inputTitle.value + ' " ble lagt til i databasen </h3>';
+            skjemaInfo.innerHTML = '<h3 style="color: #0B0C10">Filmen " ' + inputTitle.value + ' " ble lagt til i databasen </h3>';
 
             inputTitle.value    =   "";
             inputGenre.value    =   "";
@@ -101,6 +101,8 @@
             inputRating.value   =   "";
             outputRating.innerHTML = 5;
             inputComment.value =  "";
+
+
         })
 
             });
