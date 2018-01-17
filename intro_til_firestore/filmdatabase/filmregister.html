@@ -7,6 +7,16 @@
 </head>
 <body>
 
+<div class="nav">
+    <ul>
+        <li><a href="index.html">Legg til film!</a></li>
+        <li><a href="filmregister.html">Alle filmer</a></li>
+        <li><a href="sjanger.html">Alle filmer - sjanger</a></li>
+        <li><a href="top10.html">Topp 10 beste</a></li>
+        <li><a href="bot10.html">Topp 10 verste</a></li>
+    </ul>
+</div>
+
 <div class="skjemapakker">
 
     <div class="skjemainfo">
@@ -16,15 +26,16 @@
 
     <div class="skjemaform">
 
-        <div class="liste">
+        <div class="listeregister">
 
             <table border="1px">
 
                 <thead>
                 <tr>
-                    <th>Navn</th>
+                    <th class="navnecelle">Navn</th>
                     <th>År</th>
                     <th>Rangering</th>
+                    <th class="comment"></th>
                 </tr>
                 </thead>
 
@@ -63,7 +74,8 @@
             registerE.innerHTML +=
                 "<tr>" + "<td>" + dokument[x].data().title
                 + "</td>" + "<td>" + dokument[x].data().year
-                + "</td>" + "<td>" + dokument[x].data().rating + "</td>" + "</tr>";
+                + "</td>" + "<td>" + dokument[x].data().rating + "</td>" + "<td style='font-size: small'>" + dokument[x].data().comment
+            + "</td>" + "</tr>";
         }
     });
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Topp 10 beste filmer</title>
+    <title>Sjangerbasert filmliste</title>
     <link rel="stylesheet" href="../../intro_til_css/skjema/stil.css">
 </head>
 <body>
@@ -19,34 +19,34 @@
 
 <div class="skjemapakker">
 
-<div class="skjemainfo">
-    <h1>Topp 10 beste</h1>
-    <h3>Her er en topp 10 liste over de beste filmene i Daniels filmdatabase</h3>
-</div>
-
-<div class="skjemaform">
-
-    <div class="liste">
-
-        <table border="1px">
-
-            <thead>
-            <tr>
-            <th>Navn</th>
-            <th>År</th>
-            <th>Rangering</th>
-            </tr>
-            </thead>
-
-            <tbody class="register">
-
-            </tbody>
-
-        </table>
-
+    <div class="skjemainfo">
+        <h1>Sjangerbasert filmliste</h1>
+        <h3>Her er en sjangerbasert liste over filmene i Daniels filmdatabase</h3>
     </div>
 
-</div>
+    <div class="skjemaform">
+
+        <div class="liste">
+
+            <table border="1px">
+
+                <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Rangering</th>
+                    <th>Sjanger</th>
+                </tr>
+                </thead>
+
+                <tbody class="register">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
 </div>
 
 
@@ -64,7 +64,7 @@
 
 
     var registerE = document.querySelector('.register');
-    var mappe = db.collection('filmdatabase').orderBy('rating', 'desc').limit(10);
+    var mappe = db.collection('filmdatabase').orderBy('genre', 'asc');
 
     mappe.onSnapshot(function(data){
         registerE.innerHTML = "";
@@ -72,8 +72,8 @@
         for(var x in dokument){
             registerE.innerHTML +=
                 "<tr>" + "<td>" + dokument[x].data().title
-                + "</td>" + "<td>" + dokument[x].data().year
-                + "</td>" + "<td>" + dokument[x].data().rating + "</td>" + "</tr>";
+                 + "<td>" + dokument[x].data().rating + "</td>"+ "<td>" + dokument[x].data().genre
+                + "</td>" + "</tr>";
         }
     });
 

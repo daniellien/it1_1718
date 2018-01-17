@@ -10,7 +10,7 @@ body{
 .skjemapakker{
     max-width: 1024px;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 13px;
 }
 
 .skjemainfo{
@@ -70,4 +70,55 @@ th, td{
 
 .liste{
     padding-left: 216px;
+}
+
+div.nav{
+    grid-area: nav;
+    background-color: #3C4F76;
+    padding: 0;
+}
+
+.nav li:hover{
+    background-color: whitesmoke;
+}
+
+.nav a:hover{
+    color: black;
+}
+
+.nav ul {
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li{
+    margin: 0;
+    flex: 1 1;
+}
+
+.nav a{
+    color: whitesmoke;
+    width: 100%;
+    display: block;
+    padding: 1.15em 3%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.listeregister{
+    padding-left: 10px;
+}
+
+.comment{
+    padding-left: 500px;
+}
+
+.navnecelle{
+    padding-right: 100px;
 }
