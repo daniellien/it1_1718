@@ -28,13 +28,14 @@
     <div class="skjemaform">
         <p>
             <label>Tittel</label>
-            <input type="text" id="inputTitle">
+            <input type="text" id="inputTitle" required="required">
         </p>
         <p>
             <label>Sjanger</label>
             <select name="" id="inputGenre">
                 <option value="Action">Action</option>
                 <option value="Animasjon">Animasjon</option>
+                <option value="Dokumentar">Dokumentar</option>
                 <option value="Drama">Drama</option>
                 <option value="Eventyr">Eventyr</option>
                 <option value="Grøsser">Grøsser</option>
@@ -104,7 +105,7 @@
         })
 
         .then(function() {
-            skjemaInfo.innerHTML = '<h3 style="color: #0B0C10">Filmen " ' + inputTitle.value + ' " ble lagt til i databasen </h3>';
+            skjemaInfo.innerHTML = '<h3 style="color: white">Filmen " ' + inputTitle.value + ' " ble lagt til i databasen </h3>';
 
             inputTitle.value    =   "";
             inputGenre.value    =   "";
