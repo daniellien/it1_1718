@@ -1,6 +1,6 @@
 
 body{
-    background-color: #4D7298;
+    background-color: #4aaaa5;
     color: whitesmoke;
     margin: 0;
     padding: 5px;
@@ -14,7 +14,7 @@ body{
 }
 
 .skjemainfo{
-    background-color: #3C4F76;
+    background-color: #033b42;
     text-align: center;
     padding: 7px;
 }
@@ -46,7 +46,7 @@ body{
 }
 
 .skjemaform button{
-    background-color: #3C4F76;
+    background-color: #033b42;
     color: whitesmoke;
     border: 0;
     height: 100px;
@@ -121,4 +121,8 @@ div.nav{
 
 .navnecelle{
     padding-right: 100px;
+}
+
+a{
+    color: whitesmoke;
 }

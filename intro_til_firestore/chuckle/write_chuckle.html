@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write your chuckle</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+</div>
+
+<div class="skjemapakker">
+
+    <div class="skjemainfo">
+        <h2>Write your chuckle here!</h2>
+        <h3><a href="index.html">Go to chuckle!</a></h3>
+    </div>
+
+
+    <div class="skjemaform">
+        <p class="full_bredde">
+            <label>Your name</label>
+            <input style="font-family: 'Lucida Grande'" type="text" id="inputName" required="required">
+        </p>
+        <p class="full_bredde">
+            <label>Title</label>
+            <input style="font-family: 'Lucida Grande'" type="text" id="inputTitle" required="required">
+        </p>
+        <p>
+            <label>Mood</label>
+            <select name="" id="inputMood">
+                <option value="Angry">Angry</option>
+                <option value="Anxious">Anxious</option>
+                <option value="Calm">Calm</option>
+                <option value="Excited">Excited</option>
+                <option value="Happy">Happy</option>
+                <option value="Hopeful">Hopeful</option>
+                <option value="Optimistic">Optimistic</option>
+                <option value="Peaceful">Peaceful</option>
+                <option value="Sad">Sad</option>
+                <option value="Shocked">Shocked</option>
+                <option value="Worried">Worried</option>
+            </select>
+        </p>
+        <p>
+            <label for="">Date</label>
+            <input type="date" id="inputDate">
+        </p>
+
+        <p class="full_bredde">
+            <label for="">Chuckle</label>
+            <textarea name="" id="inputChuckle" cols="30" rows="20" style="font-family: 'Lucida Grande'"></textarea>
+        </p>
+        <p class="full_bredde">
+            <button id="buttonAdd">Chuckle it!</button>
+        </p>
+
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+
+    <script>
+        firebase.initializeApp({
+            apiKey: "AIzaSyDU1MCq-OVxf8RbZNGpE9RGym2aswm9oO4",
+            authDomain: "firestore-b0aaf.firebaseapp.com",
+            databaseURL: "https://firestore-b0aaf.firebaseio.com",
+            projectId: "firestore-b0aaf",
+            storageBucket: "firestore-b0aaf.appspot.com",
+            messagingSenderId: "667742455331"
+        });
+
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+
+        var inputName   = document.querySelector('#inputName');
+        var inputTitle  = document.querySelector('#inputTitle');
+        var inputMood   = document.querySelector('#inputMood');
+        var inputDate   = document.querySelector('#inputDate');
+        var inputChuckle = document.querySelector('#inputChuckle');
+        var buttonAdd   = document.querySelector('#buttonAdd');
+
+
+        buttonAdd.addEventListener('click', function () {
+            db.collection("chuckle").add({
+                name: inputName.value,
+                title: inputTitle.value,
+                mood: inputMood.value,
+                date: inputDate.value,
+                chuckle: inputChuckle.value
+            });
+                    inputName.value = "";
+                    inputTitle.value = "";
+                    inputMood.innerHTML = "Angry";
+                    inputMood.value = "Angry";
+                    inputDate.value = "";
+                    inputChuckle.value = "";
+        });
+
+
+
+    </script>
+</div>
+</body>
+</html>

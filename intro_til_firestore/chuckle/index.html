@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuckle!</title>
+    <style>
+        body{
+            background-color: #4aaaa5;
+            color: whitesmoke;
+            padding: 20px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        div{
+            background-color: white;
+            color: black;
+            margin-top: 10px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="body">
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyDU1MCq-OVxf8RbZNGpE9RGym2aswm9oO4",
+        authDomain: "firestore-b0aaf.firebaseapp.com",
+        databaseURL: "https://firestore-b0aaf.firebaseio.com",
+        projectId: "firestore-b0aaf",
+        storageBucket: "firestore-b0aaf.appspot.com",
+        messagingSenderId: "667742455331"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    var mappe = db.collection('chuckle').orderBy('date', 'desc');
+    var body = document.querySelector('.body');
+
+    mappe.onSnapshot(function(data){
+        body.innerHTML = "<h1><a href=\"write_chuckle.html\">Click here to write your chuckle!</a></h1>";
+        var dokument = data.docs;
+        for(var x in dokument){
+            body.innerHTML +=
+                "<div>" + "<h3>" + dokument[x].data().title
+                + "</h3>" + "<p>" + dokument[x].data().chuckle
+                + "</p>" + "<h6>" + dokument[x].data().name + ", " + dokument[x].data().date + "</h6>" + "</div>";
+        }
+    });
+
+</script>
+</body>
+</html>
