@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terra: registrer rett</title>
+    <style>
+
+        body{
+            background-image: url("bilder/bakgrunn_framside.jpg");
+            color: whitesmoke;
+            margin: 0;
+            padding: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .skjemapakker{
+            max-width: 1024px;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        .skjemainfo{
+            background-color: slategray;
+            text-align: center;
+            padding: 7px;
+        }
+
+        .skjemainfo ul{
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skjemaform{
+            background-image: url("bilder/bakgrunn_fill.jpg");
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .skjemaform p{
+            margin: 0;
+        }
+
+        .skjemaform .full_bredde{
+            grid-column: 1 / 3;
+        }
+
+        .skjemaform * {
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .skjemaform button{
+            background-color: slategray;
+            color: whitesmoke;
+            border: 0;
+            height: 100px;
+            padding: 10px;
+        }
+
+        .skjemaform button:hover{
+            background-color: whitesmoke;
+            color: black;
+            cursor: pointer;
+        }
+
+        a{
+            color: whitesmoke;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="skjemapakker">
+
+    <div class="skjemainfo">
+
+        <h3>Registrer rett</h3>
+        <a href="for_ansatte.html">Tilbake</a>
+
+    </div>
+
+    <form class="skjemaform">
+
+        <p>
+            <label for="">Navn på rett</label> <br>
+            <input type="text">
+        </p>
+        <p>
+            <label for="">Pris</label> <br>
+            <input type="text">
+        </p>
+
+        <p class="full_bredde">
+            <label for="">Beskrivelse</label> <br>
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+        </p>
+        <p class="full_bredde">
+            <button>Send inn</button>
+        </p>
+
+    </form>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
