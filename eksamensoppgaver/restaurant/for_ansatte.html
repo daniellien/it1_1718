@@ -5,15 +5,12 @@
     <title>Terra: for ansatte</title>
     <link rel="stylesheet" href="css_restaurant/stilark_restaurant.css">
     <style>
-        .header{
-            background-image: url("bilder/header_foransatte.png");
-        }
 
         .ansatt{
             background-image: url("bilder/bakgrunn_framside.jpg");
             width: 300px;
             height: 70px;
-            margin-top: 55px;
+            margin-top: 50px;
             margin-bottom: 50px;
             border-radius: 30px;
         }
@@ -27,31 +24,51 @@
 
         .main{
             text-align: center;
+            background-image: url("bilder/bakgrunn_ansatte.jpg");
         }
+
+        audio{
+            display: block;
+            margin: auto;
+            background-color: #0B0C10;
+        }
+
+        button{
+            background-color: gray;
+            border-radius: 10px;
+        }
+
+        button:focus {outline:0;}
+
+        .footer{
+            background-color: #BEBEBE;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="grid">
 
-    <div class="header">
-        <button style="background-color: transparent; color: transparent; width: 200px; height: 80px; border: none"><a style="color: transparent; font-size: 50px" href="index.html">Startside</a></button>
-    </div>
-
 
     <div class="main">
-        <button class="ansatt"><a href="registrer.html">Registrer rett</a></button>
-        <br>
-        <button class="ansatt"><a href="registrer.html">Liste over retter</a></button>
-        <br>
-        <button class="ansatt"><a href="registrer.html">Bordreservasjoner</a></button>
+        <img style="float: right" src="bilder/thyme.jpg" alt="">
+        <button class="ansatt"><a class="link" href="registrer.html">Registrer rett</a></button>
+        <button class="ansatt"><a href="liste_retter.html">Liste over retter</a></button>
+        <audio id="player" src="bilder/speech.mp3">Speech</audio>
+        <div>
+            <button onclick="document.getElementById('player').play()">Spill av motivasjonstale</button>
+            <button onclick="document.getElementById('player').pause()">Pause</button>
+            <button onclick="document.getElementById('player').volume += 0.1">Vol+ </button>
+            <button onclick="document.getElementById('player').volume -= 0.1">Vol- </button>
+        </div>
+        <button class="ansatt"><a href="reservasjoner.html">Bordreservasjoner</a></button>
+        <button class="ansatt"><a href="index.html">Tilbake til forside</a></button>
     </div>
 
-    <div class="footer">
+    <div class="footer"></div>
 
-    </div>
 
 </div>
-
 </body>
 </html>

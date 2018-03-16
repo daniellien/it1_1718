@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bordreservasjoner</title>
+    <style>
+        .listeregister{
+            padding-left: 10px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: #35404f;
+        }
+
+        th, td{
+            padding: 10px;
+        }
+
+        body{
+            background-image: url("bilder/bakgrunn_ansatte.jpg");
+            color: whitesmoke;
+            margin: 0;
+            padding: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        table{
+            margin: auto;
+        }
+
+        h4{
+            text-align: center;
+        }
+
+        a{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+    <div>
+        <h1>Bordreservasjoner</h1>
+        <h4><a href="for_ansatte.html">Tilbake</a></h4>
+    </div>
+
+    <div>
+
+        <div>
+
+            <table border="1px">
+
+                <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Antall</th>
+                    <th>Dato</th>
+                    <th>Klokkeslett</th>
+                    <th>Slett</th>
+                </tr>
+                </thead>
+
+                <tbody class="register">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyC1nBlp9JyJHcEuRa64g0IDD2i55L0qnj0",
+        authDomain: "restaurant-cca62.firebaseapp.com",
+        databaseURL: "https://restaurant-cca62.firebaseio.com",
+        projectId: "restaurant-cca62",
+        storageBucket: "restaurant-cca62.appspot.com",
+        messagingSenderId: "192352617577"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+
+    var registerE = document.querySelector('.register');
+    var mappe = db.collection('bordreservasjon').orderBy('dato', 'asc');
+
+    mappe.onSnapshot(function(data){
+        registerE.innerHTML = "";
+        var dokument = data.docs;
+        for(var x in dokument){
+            registerE.innerHTML +=
+                "<tr>" + "<td>" + dokument[x].data().navn
+                + "</td>" + "<td>" + dokument[x].data().antall
+                + "</td>" + "<td>" + dokument[x].data().dato + "</td>" + "<td>" + dokument[x].data().tid
+                + "</td>" + "<td>" + "<button onclick='slettBord(\"" + dokument[x].id + "\")'>Slett</button>" + "</td>" + "</tr>";
+        }
+    });
+
+    function slettBord(id) {
+        db.collection("bordreservasjon").doc(id).delete();
+    }
+
+</script>
+</body>
+</html>

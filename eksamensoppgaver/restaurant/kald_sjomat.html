@@ -8,6 +8,11 @@
         .header{
             background-image: url("bilder/header_vsjomat.png");
         }
+
+        body{
+            min-width: 800px;
+        }
+
     </style>
 </head>
 <body>
@@ -21,7 +26,7 @@
     <div class="meny">
         <ul>
             <li><a href="vegetar.html">Vegetar</a></li>
-            <li><a href="kald_sjomat.html">Kald sjømat</a></li>
+            <li style="background-color: black"><a href="kald_sjomat.html">Kald sjømat</a></li>
             <li><a href="varm_sjomat.html">Varm sjømat</a></li>
             <li><a href="kald_kjott.html">Kalde kjøttretter</a></li>
             <li><a href="varm_kjott.html">Varme kjøttretter</a></li>
@@ -31,26 +36,59 @@
 
     <div class="main">
 
-        <div class="rett">
-            <h3>Fersk kreps på spinatseng</h3>
-            <h5>Deilig fersk kreps fanget i løpet av den siste uken. Serveres på en seng av smørdampet spinat.</h5>
-            <h4>269,-</h4>
-        </div>
-
-        <div class="rett">
-            <h3>Sashimi</h3>
-            <h5>En klassisk rett fra Japan. Rå Salmalaks av ypperste kvalitet servert med soyasaus, ruccolasalat og pinnekjerner.</h5>
-            <h4>189,-</h4>
-        </div>
-
-
     </div>
 
     <div class="footer">
-
+        <button id="changeWhite">Hvit tekst</button>
+        <button id="changeBlack">Svart tekst</button>
     </div>
 
 </div>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+<script>
 
+    firebase.initializeApp({
+        apiKey: "AIzaSyC1nBlp9JyJHcEuRa64g0IDD2i55L0qnj0",
+        authDomain: "restaurant-cca62.firebaseapp.com",
+        databaseURL: "https://restaurant-cca62.firebaseio.com",
+        projectId: "restaurant-cca62",
+        storageBucket: "restaurant-cca62.appspot.com",
+        messagingSenderId: "192352617577"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    var main = document.querySelector('.main');
+    var mappe = db.collection('retter').where("kategori", "==", "kald_sjomat").orderBy('pris', 'asc');
+
+    mappe.onSnapshot(function(data){
+        main.innerHTML = "";
+        var dokument = data.docs;
+        for(var x in dokument){
+            main.innerHTML +=
+                "<div class='rett'>" +
+                "<h3>" + dokument[x].data().navn + "</h3>" +
+                "<h6>" + dokument[x].data().kokk + "</h6>" +
+                "<h5>" + dokument[x].data().kommentar + "</h5>" +
+                "<h4>" + dokument[x].data().pris + ",-" + "</h4>"
+        }
+    });
+
+    document.getElementById('changeWhite').onclick = changeColorWhite;
+    document.getElementById('changeBlack').onclick = changeColorBlack;
+
+    function changeColorWhite() {
+        document.body.style.color = "whitesmoke";
+        return false;
+    }
+
+    function changeColorBlack() {
+        document.body.style.color = "black";
+        return false;
+    }
+
+</script>
 </body>
 </html>

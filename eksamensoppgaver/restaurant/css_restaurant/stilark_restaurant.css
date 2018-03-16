@@ -30,12 +30,14 @@ body{
     grid-area: main;
     background-image: url("../bilder/bakgrunn_retter.jpg");
     background-repeat: repeat;
+    min-height: 600px;
 }
 
 .footer{
     grid-area: footer;
-    background-color: #9e9ba4;
+    background-color: #35404f;
     height: 30px;
+    padding: 3px;
 }
 
 .meny ul {
@@ -94,6 +96,13 @@ h5{
     padding: 0;
 }
 
+h6{
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
 .form{
     margin-left: auto;
     margin-right: auto;
@@ -113,6 +122,28 @@ h5{
     border-radius: 10px;
 }
 
+
+
 video{
     pointer-events: none;
 }
+
+#changeWhite{
+    background-color: white;
+    border: none;
+    color: black;
+    font-size: 15px;
+    font-family: Avenir;
+}
+
+#changeBlack{
+    background-color: white;
+    border: none;
+    color: black;
+    font-size: 15px;
+    font-family: Avenir;
+}
+
+
+input:focus {outline:0;}
+button:focus {outline:0;}

@@ -71,6 +71,10 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        input:focus {outline:0;}
+        button:focus {outline:0;}
+        textarea:focus {outline:0;}
+
     </style>
 </head>
 <body>
@@ -88,19 +92,36 @@
 
         <p>
             <label for="">Navn på rett</label> <br>
-            <input type="text">
+            <input type="text" id="inputNavn">
         </p>
         <p>
             <label for="">Pris</label> <br>
-            <input type="text">
+            <input type="text" id="inputPris">
         </p>
-
+        <p>
+            <label for="">Kategori</label> <br>
+            <select name="" id="inputKategori">
+                <option value="vegetar">Vegetar</option>
+                <option value="kald_sjomat">Kald sjømat</option>
+                <option value="varm_sjomat">Varm sjømat</option>
+                <option value="kaldt_kjott">Kaldt kjøtt</option>
+                <option value="varmt_kjott">Varmt kjøtt</option>
+            </select>
+        </p>
+        <p>
+            <label for="">Ansvarlig kokk</label> <br>
+            <select name="" id="inputKokk">
+                <option value="Bent Stiansen">Bent Stiansen</option>
+                <option value="Eyvind Hellstrøm">Eyvind Hellstrøm</option>
+                <option value="Ole Martin Alfsen">Ole Martin Alfsen</option>
+            </select>
+        </p>
         <p class="full_bredde">
             <label for="">Beskrivelse</label> <br>
-            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <textarea name="" id="inputKommentar" cols="30" rows="5"></textarea>
         </p>
         <p class="full_bredde">
-            <button>Send inn</button>
+            <button id="buttonAdd" type="button">Send inn</button>
         </p>
 
     </form>
@@ -109,6 +130,46 @@
 
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-<script src="main.js"></script>
+<script>
+
+    firebase.initializeApp({
+        apiKey: "AIzaSyC1nBlp9JyJHcEuRa64g0IDD2i55L0qnj0",
+        authDomain: "restaurant-cca62.firebaseapp.com",
+        databaseURL: "https://restaurant-cca62.firebaseio.com",
+        projectId: "restaurant-cca62",
+        storageBucket: "restaurant-cca62.appspot.com",
+        messagingSenderId: "192352617577"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    var inputNavn = document.querySelector('#inputNavn');
+    var inputPris = document.querySelector('#inputPris');
+    var inputKategori = document.querySelector('#inputKategori');
+    var inputKommentar = document.querySelector('#inputKommentar');
+    var inputKokk  =   document.querySelector('#inputKokk');
+    var buttonAdd = document.querySelector('#buttonAdd');
+
+
+    buttonAdd.addEventListener('click', function () {
+        db.collection("retter").add({
+            navn: inputNavn.value,
+            pris: inputPris.value,
+            kategori: inputKategori.value,
+            kokk: inputKokk.value,
+            kommentar: inputKommentar.value
+        });
+        inputNavn.value = "";
+        inputPris.value = "";
+        inputKommentar.value = "";
+        inputKategori.value = "vegetar";
+        inputKokk.value = "Bent";
+    });
+
+
+
+</script>
+
 </body>
 </html>
